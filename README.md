@@ -5,7 +5,7 @@ The benefit is not having to set up homebridge or buy expensive drivers to integ
 authenticated through the PyControl4 package. 
 
 **Installation**
-1. Clone the package and change the passfile. The environment variables are already set up and all you need to do is enter the appropriate information for each and then change the filename to `.env`.
+1. Clone the package and change the passfile. The environment variables are already set up and all you need to do is enter the appropriate information for each and then change the filename to `.env`. You can find the IP address of your controller by logging into your router and looking at the clients or run an nmap scan of your subnet with something like `nmap -sn 192.168.1.0/24`
 2. Install the requirements with `pip3 install -r requirements.txt`
 3. You need to find the item ID of the light/relay/etc you want to change. To do this, run the `get_item_ids.py` file and it will output all of your C4 controller information. It will be alot but you can search through it and find the item ID's that you need and change them in the script.
 4. Once you find the item ID of a light for example you would go into the `lights.py` file and change the number where it creates the C4Light object. So it would be `light = C4Light(director, <lightnumber>)`. The same goes for relays in the garage file.
